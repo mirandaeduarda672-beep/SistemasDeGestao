@@ -1,87 +1,58 @@
 import java.time.LocalDateTime;
 
 public abstract class Pessoa {
-    private String Nome;
-    private String CPF;
-    private String Matricula;
-    private double Salario;
-    private LocalDateTime cargaHoraria;
-    private LocalDateTime horasExtras;
-    private double salario;
-    private Double remuneracao;
+    private int id;
+    private String nome;
+    private String cpf;
+    private String matricula;
 
-    public Double getRemuneracao() {
-        return remuneracao;
+    public Pessoa(String nome, String cpf, String matricula) {
     }
 
-    public void setRemuneracao() {
-        this.remuneracao = remuneracao;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getNome() {
-        return Nome;
+        return nome;
     }
 
     public void setNome(String nome) {
-        Nome = nome;
+        this.nome = nome;
     }
 
-    public String getCPF() {
-        return CPF;
-    }
-
-    public void setCPF(String CPF) {
-        this.CPF = CPF;
-    }
 
     public String getMatricula() {
-        return Matricula;
+        return matricula;
     }
 
     public void setMatricula(String matricula) {
-        Matricula = matricula;
+        this.matricula = matricula;
     }
-
-    public double getSalario() {
-        return Salario;
-    }
-
-    public void setSalario(double salario) {
-        Salario = salario;
-    }
-
-    public LocalDateTime getHorasExtras() {
-        return horasExtras;
-    }
-
-    public void setHorasExtras(LocalDateTime horasExtras) {
-        this.horasExtras = horasExtras;
-    }
-
-    public LocalDateTime getCargaHoraria() {
-        return cargaHoraria;
-    }
-
-    public void setCargaHoraria(LocalDateTime cargaHoraria) {
-        this.cargaHoraria = cargaHoraria;
-    }
-
-    public void setRemuneracao(Double remuneracao) {
-        this.remuneracao = remuneracao;
-    }
+    public abstract boolean acessarSistema(String usuario, String senha);
 
     @Override
     public String toString() {
         return "Pessoa{" +
-                "Nome='" + Nome + '\'' +
-                ", CPF='" + CPF + '\'' +
-                ", Matricula='" + Matricula + '\'' +
-                ", Salario=" + Salario +
-                ", horasExtras=" + horasExtras +
-                ", salario=" + salario +
-                ", remuneracao=" + remuneracao +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", matricula='" + matricula + '\'' +
                 '}';
     }
+    public abstract String mostrarRemuneracao() ;
 
-    public abstract String mostrarRemuneracao();
-}
+    }
+

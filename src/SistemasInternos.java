@@ -1,6 +1,5 @@
 public interface SistemasInternos
 {
-  public default String acesso(){
-      return "Voce acessou";
-  }
-}
+    public interface Autenticavel {
+        boolean acessarSistema(String usuario, String senha);
+    }}

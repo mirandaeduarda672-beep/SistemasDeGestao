@@ -13,11 +13,11 @@ public class FuncionariosPJ extends Pessoa implements SistemasInternos, Trabalho
         return "Anexando nota fiscal";
     }
     public String autenticarVia2FA(){
-        return "Anexando nota fiscal";
+        return "Anexando via2fa";
     }
 
     @Override
     public String mostrarRemuneracao() {
-        return "Sua remuneração é igual a " + getRemuneracao();
+        return "Sua remuneração é igual a " + contrato;
     }
 }

@@ -1,15 +1,31 @@
-public class Estagiarios extends Pessoa implements SistemasInternos, TrabalhoRemoto {
-    public Double bolsaAuxilio;
+public class Estagiario extends Pessoa implements SistemasInternos, TrabalhoRemoto {
+    private double bolsaAuxilio;
 
-    public String mostrarBolsaAuxilio() {
-        return "Parabens, voce recebeu sua bolsa auxilio com o valor de " + bolsaAuxilio;
+    public Estagiario(String nome, String cpf, String matricula, double bolsaAuxilio) {
+        super(nome, cpf, matricula);
+        this.bolsaAuxilio = bolsaAuxilio;
     }
-     public String registrarPontoComGeolocalizacao(){
+
+    public double getBolsaAuxilio() {
+        return bolsaAuxilio;
+    }
+
+    public void setBolsaAuxilio(double bolsaAuxilio) {
+        this.bolsaAuxilio = bolsaAuxilio;
+    }
+
+    @Override
+    public boolean acessarSistema(String usuario, String senha) {
+        return true;
+    }
+
+
+    public String registrarPontoComGeolocalizacao() {
         return "Mostrando geolocalização";
-     }
+    }
 
     @Override
     public String mostrarRemuneracao() {
-        return "Sua remuneração é igual a " + getRemuneracao() + bolsaAuxilio;
+        return "Sua remuneração é igual a R$ " + bolsaAuxilio;
     }
 }
