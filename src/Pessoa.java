@@ -6,7 +6,9 @@ public abstract class Pessoa {
     private String cpf;
     private String matricula;
 
-    public Pessoa(String nome, String cpf, String matricula) {
+
+    public Pessoa() {
+
     }
 
     public int getId() {
@@ -53,6 +55,10 @@ public abstract class Pessoa {
                 '}';
     }
     public abstract String mostrarRemuneracao() ;
-
+    public Pessoa(String nome, String cpf, String matricula) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.matricula = matricula;
+    }
     }
 
